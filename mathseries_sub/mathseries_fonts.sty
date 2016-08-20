@@ -1,0 +1,30 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mathseries_fonts}
+
+% for different compilers
+\RequirePackage{ifpdf}
+
+% if pdflatex, then
+\ifpdf
+	\RequirePackage[russian]{babel}
+	\RequirePackage[utf8]{inputenc}
+	\RequirePackage[unicode]{hyperref}
+	\RequirePackage[pdftex]{graphicx}
+	\RequirePackage{cmlgc}
+\else % if xelatex, then
+	\RequirePackage{unicode-math}
+	\RequirePackage[xetex]{hyperref}
+	\RequirePackage{xltxtra}
+	\RequirePackage{xunicode}
+	\defaultfontfeatures{Mapping = tex-text}
+	\RequirePackage{polyglossia}
+	\RequirePackage{indentfirst}
+	\setdefaultlanguage[spelling = modern]{russian} 
+	\setotherlanguage{english}
+	\newfontfamily\cyrillicfont{Linux Libertine}
+	\setmainfont{Linux Libertine}
+	\setmonofont{Consolas}
+	\setmathfont{Cambria Math}
+\fi
+
+\endinput

@@ -1,0 +1,27 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mathseries_task}
+
+\RequirePackage{enumitem}
+
+\newcounter{curtask}
+
+\newenvironment{task}[1][ML]{
+	\noindent\fbox{\textbf{{#1} \arabic{curtask}.}}
+}{
+	\addtocounter{curtask}{1}
+}
+
+\newenvironment{ptask}[2][ML]{
+	\noindent\fbox{\textbf{{#1} {#2}.}}
+}{
+}
+
+
+\newcommand{\breakline}[1][0.5cm]{
+	\vspace{#1}
+    \hrule
+    \vspace{#1}
+}
+
+
+\endinput
