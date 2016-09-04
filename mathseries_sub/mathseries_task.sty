@@ -5,13 +5,15 @@
 
 \newcounter{curtask}
 
-\newenvironment{task}[1][ML]{
+\newcommand{\coursetitle}{ML}
+
+\newenvironment{task}[1][\coursetitle]{
 	\noindent\fbox{\textbf{{#1} \arabic{curtask}.}}
 }{
 	\addtocounter{curtask}{1}
 }
 
-\newenvironment{ptask}[2][ML]{
+\newenvironment{ptask}[2][\coursetitle]{
 	\noindent\fbox{\textbf{{#1} {#2}.}}
 }{
 }
