@@ -11,11 +11,13 @@
 	\noindent\fbox{\textbf{{#1} \arabic{curtask}.}}
 }{
 	\addtocounter{curtask}{1}
+    \vspace{0.3cm}
 }
 
 \newenvironment{ptask}[2][\coursetitle]{
 	\noindent\fbox{\textbf{{#1} {#2}.}}
 }{
+    \vspace{0.3cm}
 }
 
 
@@ -26,10 +28,18 @@
 }
 
 
+\makeatletter
+\AddEnumerateCounter{\asbuk}{\russian@alph}{щ}
+\makeatother
+
+
 \newlist{itemtask}{itemize}{2}
-\setlist[itemtask]{label=\textbullet, topsep = 0pt, itemsep = -1ex}
+\setlist[itemtask]{label = \textbullet, topsep = 0pt, itemsep = -1ex}
 
 \newlist{enumtask}{enumerate}{2}
-\setlist[enumtask]{label*=\arabic*., topsep = 0pt, itemsep = -1ex}
+\setlist[enumtask]{label*= \arabic*., topsep = 0pt, itemsep = -1ex}
+
+\newlist{enumcyr}{enumerate}{2}
+\setlist[enumcyr]{label = \asbuk*), ref = \asbuk*, topsep = 0pt, itemsep = -1ex}
 
 \endinput
